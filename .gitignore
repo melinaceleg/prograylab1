@@ -1,0 +1,5 @@
+obj/
+*.cbp
+*.obj
+*.layout
+bin/
