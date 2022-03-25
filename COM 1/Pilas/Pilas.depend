@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1490112217 source:c:\users\cmajo\utn\progilabi\prograylab1\com 1\pilas\pila.c
+	"pila.h"
+
+1490112217 c:\users\cmajo\utn\progilabi\prograylab1\com 1\pilas\pila.h
+	<stdio.h>
+	<malloc.h>
+
