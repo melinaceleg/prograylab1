@@ -35,7 +35,7 @@ int main()
 
     do
     {
-//        printf("Ingrese un valor entero\n");
+//        printf("Ingrese un valor entero: ");
 //        scanf("%i", &valor);
 //        apilar(&p,valor);
         leer(&p);
