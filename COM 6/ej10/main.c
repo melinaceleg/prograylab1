@@ -63,7 +63,7 @@ int main()
         {
             if (!pilavacia(&A))
             {
-                    printf("A tiene mas elementos que B\n");
+                printf("A tiene mas elementos que B\n");
             }
             else
             {
@@ -78,7 +78,6 @@ int main()
     mostrar(&A);
     printf("B:\n");
     mostrar(&B);
-
 
     return 0;
 }
