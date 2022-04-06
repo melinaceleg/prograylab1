@@ -19,6 +19,11 @@ int main()
     apilar(&p,4);
     apilar(&p,5);
 
+//    p -> base 2 1 4 5 tope
+//    menor -> base 1  tope
+//    basura = 4
+//    aux -> base tope
+
     if (!pilavacia(&p))
     {
         apilar(&menor,tope(&p));
