@@ -51,7 +51,7 @@ int main()
 
 
 /**
-Encontrar el menor elemento de una pila y guardarlo en otra.
+ 4 Encontrar el menor elemento de una pila y guardarlo en otra.
 (sin variables enteras, solo pilas)
 **/
 
@@ -102,12 +102,13 @@ int main()
 }
 
 /**
-Usando lo resuelto en el ejercicio 4,
+6 Usando lo resuelto en el ejercicio 4,
 pasar los elementos de una pila a otra de forma tal que la segunda pila
 quede ordenada de mayor (tope) a menor (base).
 Esto se llama método de ordenación por selección.
 **/
 
+////ALGORITMO DE ORDENACION POR SELECCION PARA PILAS
 
 int main()
 {
@@ -164,30 +165,33 @@ int main()
 }
 /**
 
-Insertar un elemento en una pila ordenada de menor (tope) a mayor (base)
-de forma tal que se conserve el orden. (sin variables, solo pilas)
+5 Insertar un elemento en una pila ordenada de menor (tope) a mayor (base)
+de forma tal que se conserve el orden. (sin variables enteras, solo pilas)
 **/
 
 int main()
 {
     Pila p;
     Pila aux;
-    int valor;
+    Pila valor;
     char continuar;
     inicpila(&p);
+    inicpila(&valor);
     inicpila(&aux);
 
+// p base 2 3 4  tope
+// valor base   tope
+// aux base  tope
     do
     {
-        printf("Ingrese un valor a insertar \n");
-        scanf("%i",&valor);
+        leer(&valor);
 
-        while (!pilavacia(&p) && tope(&p) > valor )
+        while (!pilavacia(&p) && tope(&p) > tope(&valor) )
         {
             apilar(&aux,desapilar(&p));
         }
 
-        apilar(&p,valor);
+        apilar(&p,desapilar(&valor));
         while(!pilavacia(&aux))
         {
             apilar(&p,desapilar(&aux));
@@ -197,6 +201,51 @@ int main()
         scanf("%c", &continuar);
     }
     while(continuar == 's' || continuar == 'S');
+
+    mostrar(&p);
+    return 0;
+}
+/**12
+dada la pila p ordenarla en forma ascendente por método de inserción
+dejando el resultado en la pila p.
+Para este ejercicio usar lo aprendido para el ejercicio 5.
+**/
+
+////ALGORITMO DE ORDENACION POR INSERCION PARA PILAS
+int main()
+{
+    Pila ORIGEN;
+    Pila aux;
+    Pila ordenada;
+    inicpila(&ORIGEN);
+    inicpila(&aux);
+    inicpila(&ordenada);
+
+//    ORIGEN base 4 5     tope
+//    ordenada base 6 2 1 tope
+//    aux base  tope
+
+    ///leer(&valor);
+    while (!pilavacia(&ORIGEN)) ///mientras no haya pasado todos los elementos de p
+    {
+
+        while (!pilavacia(&ordenada) && tope(&ordenada) > tope(&ORIGEN) ) ///busco el hueco para insertar el dato
+        {
+            apilar(&aux,desapilar(&ordenada));
+        }
+
+        apilar(&ordenada,desapilar(&ORIGEN));
+        while(!pilavacia(&aux)) ////devuelvo el resto de los elementos hacia la pila ordenada
+        {
+            apilar(&ordenada,desapilar(&aux));
+        }
+    }
+
+    while (!pilavacia(&ordenada))
+    {
+        apilar(&ORIGEN,desapilar(&ordenada));
+    }
+
 
     mostrar(&p);
     return 0;
