@@ -32,17 +32,61 @@ void pasarPilas(Pila*,Pila*);
 void copiarPilas(Pila,Pila*);
 
 
+/**
+8. Hacer una función que sume
+ y retorne los dos primeros elementos de una pila (tope y anterior),
+  sin alterar su contenido. **/
+
+  ///prototipado
+  void sumaYRetorno2Primeros(Pila,int*,int*,int*);
+
+  ///implementacion
+  void sumaYRetorno2Primeros(Pila p, int* suma, int* primero, int* segundo)
+  {
+     *primero = desapilar(&p);
+     *segundo = desapilar(&p);
+     *suma = *primero + *segundo;
+  }
+
+ int laPilaTiene2Valores(Pila A)
+ {
+     int basura;
+     int respuesta = 0;
+     if (!pilavacia(&A))
+     {
+         basura= desapilar(&A);
+         if (!pilavacia(&A))
+         {
+             respuesta = 1;
+         }
+     }
+
+     return respuesta;
+
+ }
+
 
 /// &A 0x60
 int main()
 {
     Pila A;
     Pila B;
+    int suma;
+    int pri;
+    int seg;
     inicpila(&A);
     inicpila(&B);
-    leer(&A)
     cargaPila(&A);
-    mostrar(&A);
+    if (laPilaTiene2Valores(A))
+    {
+        sumaYRetorno2Primeros(A,&suma,&pri,&seg);
+        printf("pri: %i", pri);
+        printf("seg: %i", seg);
+        printf("suma : %i", suma);
+
+    }
+
+//    mostrar(&A);
 
 
 

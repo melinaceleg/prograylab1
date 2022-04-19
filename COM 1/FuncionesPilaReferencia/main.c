@@ -31,7 +31,7 @@ int laPilatiene2elementos(Pila p)
     int respuesta=0;
     if (!pilavacia(&p))
     {
-        basura= desapilar(p);
+        basura= desapilar(&p);
         if (!pilavacia(&p))
         {
             respuesta = 1;

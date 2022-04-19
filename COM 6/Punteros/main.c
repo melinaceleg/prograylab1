@@ -47,20 +47,21 @@ int main()
   int a; /// &a 0x15
   int b; /// &b 0x20
 
-  cargaNumeros(&a,&b);
+ // cargaNumeros(&a,&b);
 
 
 
 
- // int* c; ///puntero -> almacena una direccion de memoria de una variable entera
-//  a = 3;
-//  b = 8;
+  int* c; ///puntero -> almacena una direccion de memoria de una variable entera
+  a = 3;
+  b = 8;
 
-//  printf("a: %i, b: %i\n",a,b);
-//   intercambioValores(&a,&b); ///pasaje por referencia
-//  printf("a: %i, b: %i\n",a,b);
-//
-//  ///b = 3 , a = 8
+  printf("a: %i, b: %i\n",a,b);
+
+   intercambioValores(&a,&b); ///pasaje por referencia
+  printf("a: %i, b: %i\n",a,b);
+
+  ///b = 3 , a = 8
 
 
   //modificarValor(&b);/// modificarValor(0x55);
@@ -68,14 +69,16 @@ int main()
 
 
 
-//  c = &b; /// c = 0x55
+// c = &b; /// c = 0x55
 //  printf("b antes: %i\n", b);
-//  *c = 8;
+// *c = 5;
 //  printf("a: %i\n", a);
 //  printf("b: %i\n", b);
 //  printf("direccion de b: %x\n", &b);
 //  printf("c: %x\n", c);
-//  printf("*c: %i\n", *c);
+// printf("*c: %i\n", *c)
+
+
 
 
 
