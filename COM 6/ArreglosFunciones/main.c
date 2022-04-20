@@ -25,7 +25,7 @@ void cargaArreglo(int arreglo[], int* validos) /// arreglo = 0x10 , validos = 0x
     do
     {
         printf("Ingrese un valor para la celda %i\n", i);
-        scanf("%i" &arreglo[i]);
+        scanf("%i" &arreglo[i]); ///scanf("%i", arreglo+i);
         printf("Desea continuar?\n");
         fflush(stdin);
         scanf("%c", &continuar);
@@ -39,14 +39,14 @@ void cargaArreglo(int arreglo[], int* validos) /// arreglo = 0x10 , validos = 0x
 
 //int validos; /// la puedo modificar o ver su valor (NO SE CREAN VARIABLES GLOBALES!!)
 
-///busqueda de un dato -> retornar el indice en el que se encuentra, si no lo encuentra retornar -1
+///FUNCION busqueda de un dato -> retornar el indice en el que se encuentra, si no lo encuentra retornar -1
 
 
 
 
 int main()
 {
-    int arreglo[CANT_MAX]; ///arreglo = 0x10;
+    int arreglo[CANT_MAX]; ///arreglo = 0x10; // int *arreglo = 0x10
     char continuar;
     int validos;
 
@@ -58,6 +58,7 @@ int main()
 //    arreglo[validos] = 9; ///arreglo[4] = 9;
 //    validos++;
 
+ /// arreglo[j] === *(arreglo+j)
     ///busqueda de un dato en el arreglo
     int valor;
     int j =0; //contador - recorre el arreglo desde la celda 0
