@@ -53,11 +53,15 @@ int main()
     printf("Ingrese valor a buscar\n");
     scanf("%i",&valor);
     int j=0;
+//    arreglo  2  3  5  7 ghjghj
+//    valor = 8
+//    validos = 4
+
     while (j < validos && arreglo[j] != valor)
     {
         j++;
     }
-    if (j == validos)
+    if (j == validos )
     {
         printf("El elemento no se encuentra en el arreglo\n");
     }
