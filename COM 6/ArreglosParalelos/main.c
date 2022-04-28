@@ -132,11 +132,11 @@ void insercionPersonaOrdPorDni(int dnis[],int edades[], float sueldos[], char ca
 
 ////busqueda de un valor
 
-121 233 345 450 600
-0   1   2    3   4
-
-int validos = 5
-              dni = 128
+//121 233 345 450 600
+//0   1   2    3   4
+//
+//int validos = 5
+//              dni = 128
 //se que el arreglo esta ordenado
 
                     int busquedaDNIORD(int dnis[], int validos, int dni)
