@@ -109,9 +109,9 @@ void informarDniXAntiguedad(Pila dnisMujeres, int dnis[], float sueldo[], int an
         indice = busquedaxDni(dnis,validos,desapilar(&dnisMujeres));
         if (antiguedad[indice] < antiguedad)
         {
-        printf("DNI: %i\n", dni);
-        printf("SUELDO: %.2f\n", sueldo[indice]);
-        printf("ANTIGUEDAD: %i\n\n", antiguedad[indice]);
+            printf("DNI: %i\n", dni);
+            printf("SUELDO: %.2f\n", sueldo[indice]);
+            printf("ANTIGUEDAD: %i\n\n", antiguedad[indice]);
         }
     }
 
@@ -131,6 +131,7 @@ int main()
     pasarDnis(dnis,genero,&dnisMujeres,validos);
     mostrarPromedioHombres(sueldo,genero,validos);
     indice = busquedaxDni(dnis,validos,2718394);
+    informarDniXAntiguedad(dnisMujeres,dnis,sueldo,antiguedad,validos,5);
 
     return 0;
 }
