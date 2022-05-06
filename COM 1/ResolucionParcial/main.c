@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define CANT_MAX 10
 
 ///Hacer una función que inserte los datos de cada persona ordenados por ‘dni’ de menor a mayor.
 ////podian hacer un algoritmo de carga normal o los datos ya podian llegar por parametro
@@ -41,13 +42,13 @@ void insertarPersonas(int dnis[],float sueldos[],int antiguedades[],char generos
         scanf("%i", &antiguedad);
         printf("Ingrese genero: ");
         scanf("%c", &genero);
-        insertarOrdenado(dnis,sueldos,antiguedades,generos,*validos);
+        insertarOrdenado(dnis,sueldos,antiguedades,generos,*validos,dni,antiguedad,sueldo,genero);
         (*validos)++;
         printf("Desea ingresar otra persona?");
         fflush(stdin);
         scanf("%c",&continuar);
     }
-    while(continuar=='s');
+    while(continuar=='s' && *validos < CANT_MAX);
 
 }
 
