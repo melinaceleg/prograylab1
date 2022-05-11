@@ -146,7 +146,7 @@ int main()
     }
 
 
-
+    git a
     ///puedo usar una combinacion de validos de filas y tambien validos de columnas
     ///por lo tanto me quedaria una submatriz mas pequena o igual a la que yo puedo generar
 
