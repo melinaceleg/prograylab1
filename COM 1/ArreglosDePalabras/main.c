@@ -26,6 +26,8 @@
     'm' 'a' 'u' 'r' 'i' 'c' 'i' 'o' '\0'
 
 
+    No se evalua algoritmos de ordenacion en esta 2da parte de la cursada
+
 
 **/
 
