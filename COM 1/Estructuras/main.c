@@ -5,7 +5,7 @@
 ///una estructura es un registro
 /// crear un tipo de dato nuevo que me asocie un conjunto de tipos de dato
 /// es un tipo de dato que dentro tiene un conjunto de datos.
-/// El conjunto de datos internos de la estructura se denominan CAMPOS
+/// Al conjunto de datos internos de la estructura se denominan CAMPOS
 
 typedef struct
 {
