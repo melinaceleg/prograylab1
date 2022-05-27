@@ -84,68 +84,68 @@ void muestraArreglo(int arreglo[],int validos)
 
 int main()
 {
-    ///Guardar un string a archivo
-    FILE* fp;  /// Manejador de archivo
-    int numerito;
-    char nombre[20]= "Pepe";
-    fp = fopen("MiPrimerArchivo.bin", "wb"); /// si no se puede abrir por X motivo -> retorna NULL
-    ///deberiamos verificar de que no sea NULL para decir que se abrio exitosamente
-    if (fp != NULL)
-    {
-       fwrite(&nombre,sizeof(char),CANT_MAX,fp);
-
-        fclose(fp); ///cerramos el archivo
-
-    }
-    else
-        printf("Hubo un error");
-
-    ///Traer un string desde el archivo
-    FILE* fp;
-    char nombre[CANT_MAX];
-    fp = fopen(NOM_ARCH,"rb");
-    if (fp != NULL)
-    {
-        fread(&nombre,sizeof(char),CANT_MAX,fp);
-
-        printf("%s", nombre);
-
-        fclose(fp);
-    }
-
-///ESCRITURA DE UN ARREGLO DE ENTEROS CARGADO POR EL USUARIO
-    FILE* fp;
-    int arreglo[CANT_MAX];
-    int validos;
-    cargaArreglo(arreglo,&validos);
-    fp = fopen("OtroArchivo.bin", "ab");
-    if (fp != NULL)
-    {
-        fwrite(&arreglo,sizeof(int), validos, fp);
-        fclose(fp);
-
-    }
-
-///LECTURA DE UN ARREGLO DE ENTEROS DESDE ARCHIVO
-///lectura de tipo secuencial -dato a dato
-    FILE* fp;
-    int arreglo[CANT_MAX];
-    int validos=0;
-    fp = fopen("OtroArchivo.bin", "rb");
-    if (fp != NULL)
-    {
-        int i = 0;
-        while (fread(&arreglo[i],sizeof(int),1,fp) > 0)
-        {
-            i++;
-        }
-        validos = i;
-        fclose(fp);
-    }
-
-    muestraArreglo(arreglo,validos);
-
-
+//    ///Guardar un string a archivo
+//    FILE* fp;  /// Manejador de archivo
+//    int numerito;
+//    char nombre[20]= "Pepe";
+//    fp = fopen("MiPrimerArchivo.bin", "wb"); /// si no se puede abrir por X motivo -> retorna NULL
+//    ///deberiamos verificar de que no sea NULL para decir que se abrio exitosamente
+//    if (fp != NULL)
+//    {
+//       fwrite(&nombre,sizeof(char),CANT_MAX,fp);
+//
+//        fclose(fp); ///cerramos el archivo
+//
+//    }
+//    else
+//        printf("Hubo un error");
+//
+//    ///Traer un string desde el archivo
+//    FILE* fp;
+//    char nombre[CANT_MAX];
+//    fp = fopen(NOM_ARCH,"rb");
+//    if (fp != NULL)
+//    {
+//        fread(&nombre,sizeof(char),CANT_MAX,fp);
+//
+//        printf("%s", nombre);
+//
+//        fclose(fp);
+//    }
+//
+/////ESCRITURA DE UN ARREGLO DE ENTEROS CARGADO POR EL USUARIO
+//    FILE* fp;
+//    int arreglo[CANT_MAX];
+//    int validos;
+//    cargaArreglo(arreglo,&validos);
+//    fp = fopen("OtroArchivo.bin", "ab");
+//    if (fp != NULL)
+//    {
+//        fwrite(&arreglo,sizeof(int), validos, fp);
+//        fclose(fp);
+//
+//    }
+//
+/////LECTURA DE UN ARREGLO DE ENTEROS DESDE ARCHIVO
+/////lectura de tipo secuencial -dato a dato
+//    FILE* fp;
+//    int arreglo[CANT_MAX];
+//    int validos=0;
+//    fp = fopen("OtroArchivo.bin", "rb");
+//    if (fp != NULL)
+//    {
+//        int i = 0;
+//        while (fread(&arreglo[i],sizeof(int),1,fp) > 0)
+//        {
+//            i++;
+//        }
+//        validos = i;
+//        fclose(fp);
+//    }
+//
+//    muestraArreglo(arreglo,validos);
+//
+//
 
 ///POSICIONAMIENTO
 //fseek(fp,0,SEEK_END);
@@ -158,24 +158,68 @@ int main()
 ///DESDE LA POSICION ACTUAL ME DESPLAZO
 //fseek(fp,sizeof(int)*2,SEEK_CUR)
 
-
 //DESDE El FINAL ME DESPLAZO HACIA LA IZQ
 //fseek(fp,(sizeof(int)*2)*(-1), SEEK_END);
 
 ///DSDE EL INICIO ME DESPLAZO HACIA LA DER
 //fseek(fp,sizeof(int)*5,SEEK_SET);
 
-///cantidad de enteros cargada en el archivo
-    FILE* fp;
-    fp = fopen("OtroArchivo.bin", "rb");
-    int cant_datos;
-    if (fp != NULL)
-    {
-        fseek(fp,0,SEEK_END);
-        cant_datos = ftell(fp)/sizeof(int);
-        fclose(fp);
-        printf("cantidad de datos: %i", cant_datos);
-    }
+/////cantidad de enteros cargada en el archivo
+//    FILE* fp;
+//    fp = fopen("OtroArchivo.bin", "rb");
+//    int cant_datos;
+//    if (fp != NULL)
+//    {
+//        fseek(fp,0,SEEK_END);
+//        cant_datos = ftell(fp)/sizeof(int);
+//        fclose(fp);
+//        printf("cantidad de datos: %i", cant_datos);
+//    }
+
+///lectura de una matriz de enteros desde el archivo
+/////es una matriz de 2 x 2 -> 4 datos en  el archivo
+//    FILE *fp;
+//    int matriz[2][2];
+//    fp = fopen("Archivotal.bin", "rb");
+//    if (fp != NULL)
+//    {
+//        for (int i = 0; i < 2 ; i++)
+//        {
+//            for (int j = 0 ; j < 2 ; j++)
+//            {
+//                fread(&matriz[i][j],sizeof(int),1,fp);
+//            }
+//        }
+//        fclose(fp);
+//    }
+//
+//    for (int i = 0 ; i < 2 ; i++)
+//    {
+//        for (int j = 0; j < 2 ; j++)
+//        {
+//            printf("%i ", matriz[i][j]);
+//        }
+//        printf("\n");
+//    }
+//
+/////escritura de una matriz de enteros en el archivo
+//    FILE* fp;
+//    int matriz[][2] = {{2,3},{6,8}};
+//    fp=fopen("Archivotal.bin","ab");
+//    if (fp != NULL)
+//    {
+//        fwrite(&matriz,sizeof(int),4,fp);
+////          for(int i = 0 ; i < 2 ; i++)
+////          {
+////              for (int j = 0; j < 2 ; j++)
+////              {
+////                  fwrite(&matriz[i][j],sizeof(int),1,fp);
+////
+////              }
+////          }
+//
+//          fclose(fp);
+//    }
 
 
     return 0;
