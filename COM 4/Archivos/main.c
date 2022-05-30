@@ -89,8 +89,26 @@ void muestraArreglo(int arreglo[], int validos)
 }
 
 
+///cantidad de registros generica
+//int cantRegistros(char nomArch[],int tamano_tipo_dato)
+//{
+//    int cant;
+//    FILE* fp = fopen(nomArch,"rb");
+//    if (fp != NULL)
+//    {
+//        fseek(fp,0,SEEK_END);
+//        cant =ftell(fp)/tamano_tipo_dato;
+//
+//    }
+// return cant;
+//}
+
+
+
 int main()
 {
+
+
 //    ///MODO ESCRITURA
 //  FILE* fp; /// Manejador del archivo /// handler /// intermediario
 //  int numerito = 3;
@@ -250,6 +268,9 @@ int main()
 ///estructuras en archivos
 /// Alta - modificacion - baja logica
 // En el parcial de laboratorio no entra esto ultimo - En el de programcion SOLO teoria
+
+
+
 
 
     return 0;

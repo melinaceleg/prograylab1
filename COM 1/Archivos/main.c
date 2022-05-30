@@ -92,7 +92,7 @@ int main()
     ///deberiamos verificar de que no sea NULL para decir que se abrio exitosamente
     if (fp != NULL)
     {
-       fwrite(&nombre,sizeof(char),CANT_MAX,fp);
+       fwrite(nombre,sizeof(char),CANT_MAX,fp);
 
         fclose(fp); ///cerramos el archivo
 
@@ -106,7 +106,7 @@ int main()
     fp = fopen(NOM_ARCH,"rb");
     if (fp != NULL)
     {
-        fread(&nombre,sizeof(char),CANT_MAX,fp);
+        fread(nombre,sizeof(char),CANT_MAX,fp);
 
         printf("%s", nombre);
 
@@ -121,7 +121,7 @@ int main()
     fp = fopen("OtroArchivo.bin", "ab");
     if (fp != NULL)
     {
-        fwrite(&arreglo,sizeof(int), validos, fp);
+        fwrite(arreglo,sizeof(int), validos, fp);
         fclose(fp);
 
     }
