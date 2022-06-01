@@ -21,6 +21,17 @@ FUNCIONES DE CONTROL
     FILE* fopen(RUTA,MODO); --> nos devuelve un puntero a file si se logra abrir de lo contrario NULL
        /// si no especifico una ruta, la ruta directa es la del proyecto
        ///de lo contrario ... C://MiCarpeta/OtraCarpeta/Miarchivo.bin debo especificar la ruta completa
+
+      MODOS DE APERTURA
+        ESCRITURA
+        - wb -> write binary -> Modo escritura, si no existe el archivo, lo crea. situa el puntero al inicio asi que BORRA la informacion que tengamos ya escrita,
+        - ab -> append binary -> Modo escritura, si no  existe el archivo, lo crea. situa el puntero al final del archivo para luego añadir datos.
+        LECTURA
+        - rb -> read binary -> Modo lectura, si no existe, NO LO CREA
+
+
+   int fclose(FILE* fp) -> Cierra el archivo correctamente, devuelve 0 si se cerro de manera correcta de lo contrario -1
+
     POSICIONAMIENTO EN EL ARCHIVO
     fseek(FILE*,cantidad desplazamiento, desde donde);
         -> cantidad desplazamiento: bytes, sizeof(int)*2
@@ -44,15 +55,6 @@ FUNCIONES DE CONTROL
     POSICION DEL PUNTERO
       int ftell(fp) -> nos dice la posicion en la que se encuentra el puntero en bytes
 
-
-    MODOS DE APERTURA
-        ESCRITURA
-        - wb -> write binary -> Modo escritura, si no existe el archivo, lo crea. situa el puntero al inicio asi que BORRA la informacion que tengamos ya escrita,
-        - ab -> append binary -> Modo escritura, si no  existe el archivo, lo crea. situa el puntero al final del archivo para luego añadir datos.
-        LECTURA
-        - rb -> read binary -> Modo lectura, si no existe, NO LO CREA
-
-   int fclose(FILE* fp) -> Cierra el archivo correctamente, devuelve 0 si se cerro de manera correcta de lo contrario -1
 
 FUNCIONES DE ESCRITURA/LECTURA
     int fwrite(ubicacion de la variable que queremos escribir, tamano del tipo de dato de mi variable, la cantidad de datos, FILE*);
